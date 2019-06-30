@@ -1,4 +1,4 @@
-const resolution = 10;
+const resolution = 20;
 
 let snake;
 let food;
@@ -19,8 +19,8 @@ function setup() {
 function draw() {
 
     /*
-    Canvas is 400x400 but is scaled to x10
-    so it should be thought of as 40x40
+    Canvas is 400x400 but is scaled to x20
+    so it should be thought of as 20x20
      */
     scale(resolution);
     background(220);
