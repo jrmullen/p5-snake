@@ -8,6 +8,8 @@ class Snake {
     }
 
     show() {
+        noStroke();
+        fill('black');
         rect(this.x, this.y, 1, 1);
     }
 

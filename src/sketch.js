@@ -1,20 +1,28 @@
 const resolution = 10;
 
 let snake;
+let food;
 
 function setup() {
     createCanvas(400, 400);
-    frameRate(15);
+    frameRate(5);
 
     snake = new Snake();
+    food = new Food(10, 10);
 }
 
 function draw() {
+
+    /*
+    Canvas is 400x400 but is scaled to x10
+    so it should be thought of as 40x40
+     */
     scale(resolution);
     background(220);
 
     snake.update();
     snake.show();
+    food.show();
 }
 
 function keyPressed() {
