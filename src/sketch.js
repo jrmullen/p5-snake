@@ -32,6 +32,7 @@ function draw() {
 
     if (snake.eat(food)) {
         createNewFood();
+        snake.grow();
     }
 }
 
