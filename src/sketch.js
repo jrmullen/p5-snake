@@ -2,13 +2,18 @@ const resolution = 10;
 
 let snake;
 let food;
+let canvasWidth;
+let canvasHeight;
 
 function setup() {
     createCanvas(400, 400);
     frameRate(5);
 
+    canvasWidth = floor(width / resolution);
+    canvasHeight = floor(height / resolution);
+
     snake = new Snake();
-    food = new Food(10, 10);
+    createNewFood();
 }
 
 function draw() {
@@ -20,9 +25,18 @@ function draw() {
     scale(resolution);
     background(220);
 
+    // Create objects on canvas and update them
     snake.update();
     snake.show();
     food.show();
+
+    if (snake.eat(food)) {
+        createNewFood();
+    }
+}
+
+function createNewFood() {
+    food = new Food(floor(random(canvasWidth)), floor(random(canvasHeight)));
 }
 
 function keyPressed() {
