@@ -47,19 +47,26 @@ function createNewFood() {
 }
 
 function keyPressed() {
-
     switch (keyCode) {
         case LEFT_ARROW:
-            snake.setDirection(-1, 0);
+            if (snake.xDir !== 1) {
+                snake.setDirection(-1, 0);
+            }
             break;
         case RIGHT_ARROW:
-            snake.setDirection(1, 0);
+            if (snake.xDir !== -1) {
+                snake.setDirection(1, 0);
+            }
             break;
         case DOWN_ARROW:
-            snake.setDirection(0, 1);
+            if (snake.yDir !== -1) {
+                snake.setDirection(0, 1);
+            }
             break;
         case UP_ARROW:
-            snake.setDirection(0, -1);
+            if (snake.yDir !== 1) {
+                snake.setDirection(0, -1);
+            }
             break;
     }
 }
