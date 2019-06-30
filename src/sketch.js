@@ -43,6 +43,7 @@ function draw() {
 }
 
 function createNewFood() {
+    // TODO don't let a food appear on a pixel that the snake is on
     food = new Food(floor(random(canvasWidth)), floor(random(canvasHeight)));
 }
 
