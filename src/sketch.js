@@ -30,6 +30,12 @@ function draw() {
     snake.show();
     food.show();
 
+    if (snake.hasEatenItself()) {
+        print('GAME OVER');
+        background(255, 0, 0);
+        noLoop();
+    }
+
     if (snake.eat(food)) {
         createNewFood();
         snake.grow();
